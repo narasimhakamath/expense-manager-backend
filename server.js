@@ -5,6 +5,9 @@ const colors = require('colors');
 
 dotenv.config({path: './configurations/configuration.env'});
 
+const connectDB = require('./configurations/database');
+connectDB();
+
 const app = express();
 app.use(express.json());
 
