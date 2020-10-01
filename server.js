@@ -14,6 +14,11 @@ app.use(express.json());
 if(process.env.ENVIRONMENT === "development")
 	app.use(morgan('dev'));
 
+
+// Mounting the routes.
+app.use('/api/users', require('./routes/users'));
+
+
 const PORT = process.env.PORT || 5000;
 console.clear();
 const server = app.listen(PORT, console.log(`Server is running in the environment: ${process.env.ENVIRONMENT} on the port: ${PORT}`.yellow.bold));
